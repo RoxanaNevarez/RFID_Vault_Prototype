@@ -1,3 +1,5 @@
+#Note: code may have errors that have yet to be corrected
+
 #include <SPI.h> //allows code/data transfer to occur with the RFID reader
 #include <RFID.h> //allows reading from or sending code to an RFID reader using the assigned card or tag
 #include <Servo.h> //allows arduino Uno to have control over the motor connected
@@ -74,3 +76,11 @@ void checkAccess (String SNum) //User-defined function that will check if the re
     } //ends if statement
   } //ends for loop
 } //ends user-defined checkAccess function
+
+#To develop a better understanding of RFIDs and programming through the Arduino software, the following sources were used:
+#To learn about RFID: https://lastminuteengineers.com/how-rfid-works-rc522-arduino-tutorial/ 
+#Learning about RFID libraries and testing different ways RFID reader can be used: https://www.arduino.cc/reference/en/libraries/mfrc522/ , https://github.com/addicore/AddicoreRFID 
+#To understand Arduino language references: https://www.arduino.cc/reference/en/ 
+#To learn about SPI library: https://www.arduino.cc/reference/en/language/functions/communication/spi/ 
+#To learn about Servo library: https://www.arduino.cc/reference/en/libraries/servo/ 
+
