@@ -9,4 +9,4 @@ Materials Used:
 
 *Note*: Respective credits are written in code
 
-<img width="2850" height="4227" alt="Image" src="https://github.com/user-attachments/assets/f1ee3023-cc7c-4ce7-a62e-bb24740224fc" />
+<img width="1000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/f1ee3023-cc7c-4ce7-a62e-bb24740224fc" />
