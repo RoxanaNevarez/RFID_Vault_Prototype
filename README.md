@@ -6,5 +6,6 @@
 Materials Used:
 * RFID-RC522 [reader, card, tag]
 * Servo motor
+* GME12864 OLED Display
 
 <img width="600" height="550" alt="Image" src="https://github.com/user-attachments/assets/db3af0da-2538-4c0e-9071-1e5f05a03246" />
