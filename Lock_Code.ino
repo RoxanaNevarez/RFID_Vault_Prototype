@@ -1,5 +1,6 @@
 // Project Updated: 08.06.2025
 // Updates: included OLED display and updated libraries 
+// Assistance: ChatGPT
 #include <Wire.h>
 #include <SPI.h>
 #include <MFRC522.h>
@@ -23,6 +24,9 @@ MFRC522 rfid(SS_PIN, RST_PIN);
 Servo myServo;
 bool locked = true;  // servo starts in locked position (servo arm along +x-axis)
 
+// ==== BUZZER SETUP ====
+#define BUZZER_PIN 4 // D4
+
 // ===== AUTHORIZED UID =====
 byte authorizedUID[] = { 0x73, 0x1F, 0xAA, 0xD }; // tag UID will work
                                                   // card UID: {0XD3, 0XC, 0X66, 0X11} will not work - testing purposes
@@ -33,6 +37,7 @@ void setup()
   Wire.begin();
   SPI.begin();
   rfid.PCD_Init();
+  pinMode(BUZZER_PIN, OUTPUT);
 
   myServo.attach(SERVO_PIN);
   myServo.write(30);  // locked position (servo arm along +x-axis)
@@ -44,6 +49,25 @@ void setup()
     while (1);
   }
   displayMessage("Scan your tag..."); // displayed on OLED
+}
+
+ // ==== Buzzer Conditions ====
+ void beepSuccess() // when access is granted and when servo motor arm enters locked position
+ {
+  tone(BUZZER_PIN, 1000);  // high pitch (1000 Hz)
+  delay(150);
+  noTone(BUZZER_PIN);
+}
+
+void beepFailure() // when access is denied
+{
+  for (int i = 0; i < 2; i++) 
+  {
+    tone(BUZZER_PIN, 200);  // low pitch (200 Hz)
+    delay(100);
+    noTone(BUZZER_PIN);
+    delay(100);             // pause between beeps
+  }
 }
 
 void loop() 
@@ -66,15 +90,19 @@ void loop()
   {
     if (locked) 
     {
-        Serial.println("Access Granted!"); // displayed on serial monitor 
-        displayMessage("Access    Granted"); // displayed on OLED
+        Serial.println("Access Granted! Safe Vault Unlocked"); // displayed on serial monitor 
+        displayMessage("Access    Granted"); // displayed on OLED 
+        beepSuccess();
         myServo.write(128); // unlocked position (servo arm along +y-axis)
+        delay(1000);
+        displayMessage("Unlocked");
         locked = false;
     } 
     else 
     {
-        Serial.println("Locked!"); // displayed on serial monitor 
+        Serial.println("Safe Vault Locked!"); // displayed on serial monitor 
         displayMessage("Locked"); // displayed on OLED 
+        beepSuccess();
         myServo.write(30);   // locked position (servo arm along +x-axis)
         locked = true;
         delay(2000); // displays "Locked" for 2 seconds
@@ -86,6 +114,7 @@ void loop()
   {
     Serial.println("Access Denied!"); // displayed on serial monitor 
     displayMessage("Access    Denied"); // displayed on OLED 
+    beepFailure();
     delay(2000); // displays "Access Denied" for 2 seconds
     displayMessage("Scan your tag...");
   }
@@ -113,4 +142,3 @@ void displayMessage(const char *msg)
   display.println(msg);
   display.display();
 }
-
