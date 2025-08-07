@@ -43,7 +43,7 @@ void setup()
     Serial.println(F("OLED init failed"));
     while (1);
   }
-  displayMessage("Scan your card..."); // displayed on OLED
+  displayMessage("Scan your tag..."); // displayed on OLED
 }
 
 void loop() 
@@ -78,7 +78,7 @@ void loop()
         myServo.write(30);   // locked position (servo arm along +x-axis)
         locked = true;
         delay(2000); // displays "Locked" for 2 seconds
-        displayMessage("Scan your card..."); // displayed message gets updated
+        displayMessage("Scan your tag..."); // displayed message gets updated
     }
     
   } 
@@ -87,7 +87,7 @@ void loop()
     Serial.println("Access Denied!"); // displayed on serial monitor 
     displayMessage("Access    Denied"); // displayed on OLED 
     delay(2000); // displays "Access Denied" for 2 seconds
-    displayMessage("Scan your card...");
+    displayMessage("Scan your tag...");
   }
 
   // ==== Halt and Stop Encryption ====
@@ -113,3 +113,4 @@ void displayMessage(const char *msg)
   display.println(msg);
   display.display();
 }
+
