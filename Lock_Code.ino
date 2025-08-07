@@ -3,10 +3,10 @@
 // Assistance: ChatGPT
 #include <Wire.h>
 #include <SPI.h>
-#include <MFRC522.h>
+#include <MFRC522.h> // needed for OLED display
 #include <Servo.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include <Adafruit_GFX.h> // needed for OLED display
+#include <Adafruit_SSD1306.h> // needed for OLED display
 
 // ===== OLED SETUP =====
 #define SCREEN_WIDTH 128
@@ -142,4 +142,5 @@ void displayMessage(const char *msg)
   display.println(msg);
   display.display();
 }
+
 
