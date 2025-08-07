@@ -3,7 +3,7 @@
 
 **Functionality**: The OLED display prompts the user to scan their tag. The RFID reader will read the tag's UID once held at a close proximity. If the reader detects a tag with an accepted UID, the OLED display will show a message indicating that access was granted, and the servo motor will move its arm to unlock the door. Once the person is done storing valuables in the safe vault, they will scan the tag again, the servo motor's arm will enter its locked position, and the OLED display will show that the safe vault is locked.  
 
-*Note*: A card may alternatively be used, as long as the accepted UID is updated in the code.
+*Note*: A card may alternatively be used, as long as the corresponding UID is applied in the code.
 
 Materials Used:
 * RFID-RC522 [reader, card, tag]
