@@ -1,5 +1,5 @@
 // Project Updated: 08.06.2025
-// Updates: included OLED display and updated libraries 
+// Updates: included OLED display, buzzer, and updated libraries 
 // Assistance: ChatGPT
 #include <Wire.h>
 #include <SPI.h>
@@ -142,3 +142,4 @@ void displayMessage(const char *msg)
   display.println(msg);
   display.display();
 }
+
