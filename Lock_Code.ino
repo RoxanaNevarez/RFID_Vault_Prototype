@@ -112,7 +112,7 @@ void loop()
   } 
   else 
   {
-    Serial.println("Access Denied!"); // displayed on serial monitor 
+    Serial.println("Access Denied! Scan Valid Tag"); // displayed on serial monitor 
     displayMessage("Access    Denied"); // displayed on OLED 
     beepFailure();
     delay(2000); // displays "Access Denied" for 2 seconds
