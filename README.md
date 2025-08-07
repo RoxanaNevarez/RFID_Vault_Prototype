@@ -11,4 +11,4 @@ Materials Used:
 * GME12864 OLED display
 * Passive buzzer
 
-<img width="650" height="600" alt="Image" src="https://github.com/user-attachments/assets/d769ceac-c539-4e77-910d-7499ea400e2c" />
+<img width="650" height="600" alt="Image" src="https://github.com/user-attachments/assets/a744bc8b-c3cd-4d31-b1ab-d76b30fbc2f9" />
