@@ -1,7 +1,9 @@
 # **RFID Safe Vault Prototype Project**  
-**Problem Addressed**: I wanted to make a safe vault prototype to protect valuable objects I had in my room to prevent them from being damaged by others while I was not at home.  
+**Problem Addressed**: I wanted to make a safe vault mechanism to protect valuable objects I had in my room and prevent them from being damaged by others while I was not at home.  
 
-**Functionality**: The RFID reader scans a card or tag once held at a close proximity. If the reader detects a card or tag with the valid serial numbers, the servo motor would move its arm to unlock the door.  
+**Functionality**: The OLED display prompts the user to scan their tag. The RFID reader will read the tag's UID once held at a close proximity. If the reader detects a tag with an accepted UID, the OLED display will show a message indicating that access was granted, and the servo motor will move its arm to unlock the door. Once the person is done storing valuables in the safe vault, they will scan the tag again, the servo motor's arm will enter its locked position, and the OLED display will show that the safe vault is locked.  
+
+*Note*: A card may alternatively be used, as long as the accepted UID is updated in the code.
 
 Materials Used:
 * RFID-RC522 [reader, card, tag]
