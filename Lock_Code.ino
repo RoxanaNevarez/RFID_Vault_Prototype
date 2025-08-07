@@ -54,7 +54,7 @@ void setup()
  // ==== Buzzer Conditions ====
  void beepSuccess() // when access is granted and when servo motor arm enters locked position
  {
-  tone(BUZZER_PIN, 1000);  // high pitch (1000 Hz)
+  tone(BUZZER_PIN, 1000); // high pitch (1000 Hz)
   delay(150);
   noTone(BUZZER_PIN);
 }
@@ -63,10 +63,10 @@ void beepFailure() // when access is denied
 {
   for (int i = 0; i < 2; i++) 
   {
-    tone(BUZZER_PIN, 200);  // low pitch (200 Hz)
+    tone(BUZZER_PIN, 200); // low pitch (200 Hz)
     delay(100);
     noTone(BUZZER_PIN);
-    delay(100);             // pause between beeps
+    delay(100);  // pause between beeps
   }
 }
 
@@ -103,7 +103,7 @@ void loop()
         Serial.println("Safe Vault Locked!"); // displayed on serial monitor 
         displayMessage("Locked"); // displayed on OLED 
         beepSuccess();
-        myServo.write(30);   // locked position (servo arm along +x-axis)
+        myServo.write(30); // locked position (servo arm along +x-axis)
         locked = true;
         delay(2000); // displays "Locked" for 2 seconds
         displayMessage("Scan your tag..."); // displayed message gets updated
@@ -142,5 +142,6 @@ void displayMessage(const char *msg)
   display.println(msg);
   display.display();
 }
+
 
 
