@@ -7,6 +7,4 @@ Materials Used:
 * RFID-RC522 [reader, card, tag]
 * Servo motor
 
-*Note*: Credits given to corresponding authors are included in the code.
-
-<img width="380" height="500" alt="Image" src="https://github.com/user-attachments/assets/f1ee3023-cc7c-4ce7-a62e-bb24740224fc" />
+<img width="600" height="550" alt="Image" src="https://github.com/user-attachments/assets/db3af0da-2538-4c0e-9071-1e5f05a03246" />
