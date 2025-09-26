@@ -48,7 +48,7 @@ void setup()
   bottomServo.write(100); // locked position
 
   // displayMessage - shown on OLED 
-  // Serial.print(ln) - shown on Serial Monitor
+  // Serial.println() - shown on Serial Monitor
 
   // ==== Initialize OLED ====
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
